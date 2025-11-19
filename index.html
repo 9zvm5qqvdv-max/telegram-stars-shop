@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин Stars</title>
+</head>
+<body>
+    <h2>Выберите количество Stars:</h2>
+    <button onclick="buyStars(50)">50 Stars</button>
+    <button onclick="buyStars(100)">100 Stars</button>
+    <button onclick="buyStars(150)">150 Stars</button>
+    <button onclick="buyStars(500)">500 Stars</button>
+    <button onclick="buyStars(1000)">1000 Stars</button>
+
+    <script>
+        function buyStars(amount) {
+            const data = JSON.stringify({stars: amount});
+            Telegram.WebApp.sendData(data);  // отправка данных обратно боту
+            alert("Вы выбрали: " + amount + " Stars");
+        }
+    </script>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</body>
+</html>
